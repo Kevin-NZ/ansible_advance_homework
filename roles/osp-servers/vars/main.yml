@@ -18,7 +18,7 @@ osp_servers:
     flavor: m2.small
     security_group: apps
     meta:
-      - { group: apps, deployment_name: QA}
+      - { group: apps, deployment_name: QA, http_port: 8080}
   app2:
     name: app2
     state: present
@@ -27,7 +27,7 @@ osp_servers:
     flavor: m2.small
     security_group: apps
     meta:
-      - { group: apps, deployment_name: QA}
+      - { group: apps, deployment_name: QA, http_port: 8080}
   db:
     name: db
     state: present
