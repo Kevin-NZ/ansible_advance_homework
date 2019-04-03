@@ -1,2 +1,30 @@
 ---
 # tasks file for app-tier
+
+- name: Install Tomcat
+  yum:
+    name:  tomcat
+    state: present
+
+- name: Create Tomcat ROOT directory
+  file:
+    path:  /usr/share/tomcat/webapps/ROOT
+    state: directory
+    owner: tomcat
+    group: tomcat
+    mode:  0770
+
+- name: Create a default ROOT index page
+  template:
+    src:   index.html.j2
+    dest:  /usr/share/tomcat/webapps/ROOT/index.html
+    owner: tomcat
+    group: tomcat
+    mode:  0640
+
+- name: Start Tomcat service
+  service:
+    name:    tomcat
+    state:   started
+    enabled: yes
+
