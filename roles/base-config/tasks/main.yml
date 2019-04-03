@@ -1,2 +1,8 @@
 ---
 # tasks file for base-config
+
+- name: Enable Custom Repos
+  copy:
+    src:  open_three-tier-app.repo
+    dest: /etc/yum.repos.d/open_three-tier-app.repo
+    mode: 0640
