@@ -1,6 +1,6 @@
 - name: Create Homework Assignment project 
   command: |
-    tower-cli project create --name "{{ proj_name }}" --scm-type=git --scm-url="{{ scm_url }}" --wait
+    tower-cli project create --name "{{ proj_name }}" --scm-type=git --scm-url="{{ scm_url }}" --organization="{{ org_name }}" --wait
 
 - name: Machine Credential to connect to workstation using openstack.pub
   tower_credential:
