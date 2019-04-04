@@ -33,6 +33,9 @@
   loop: "{{ osp_servers | dict2items }}"
   register: floating_ip_info
 
+- debug: msg="{{ item.floating_ip.floating_ip_address }}"
+  loop: "{{ floating_ip_info.results }}"
+
 - name: Wait for server to be available
   wait_for:
     host: "{{ item.floating_ip.floating_ip_address }}"
