@@ -2,9 +2,6 @@
 
 # tasks file for osp.servers
 
-- debug: msg="{{ item.value.meta }}"
-  loop: "{{ osp_servers | dict2items }}"
-
 - name: Create new server instances and attaches them a network and passes metadata to the instance
   os_server:
     state: "{{ item.value.state }}"
