@@ -13,7 +13,7 @@
     nics:
     - net-name: int_network
     image: rhel-guest
-    security_groups: "{{ item.value.security_groups }}"
+    security_groups: "{{ item.value.security_group }}"
     wait: yes
     userdata: |
       #!/bin/bash
