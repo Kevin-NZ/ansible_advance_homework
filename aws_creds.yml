@@ -37,7 +37,6 @@
       tower_host: tower1.{{tower_guid}}.example.opentlc.com
       tower_username: admin
       tower_password: r3dh4t1!
-      tower_verify_ssl: no
       state: present
       job_type: run
       playbook: site-3tier-app.yml
@@ -49,7 +48,6 @@
       tower_host: tower1.{{tower_guid}}.example.opentlc.com
       tower_username: admin
       tower_password: r3dh4t1!
-      tower_verify_ssl: no
       state: present
       job_type: run
       playbook: site-smoketest-aws.yml
