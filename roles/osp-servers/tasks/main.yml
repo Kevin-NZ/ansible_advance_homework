@@ -19,7 +19,7 @@
       #!/bin/bash
       curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
       cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
-  loop: "{{ osp_servers }}"
+  loop: "{{ osp_servers | dict2items }}"
 
 - name: Add floating IP to Servers
   os_floating_ip:
@@ -30,7 +30,7 @@
     network: ext_network
     wait: true
     timeout: 180
-  loop: "{{ osp_servers }}"
+  loop: "{{ osp_servers | dict2items }}"
   register: floating_ip_info
 
 - name: Wait for server to be available
