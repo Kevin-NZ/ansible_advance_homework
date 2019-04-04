@@ -8,7 +8,7 @@
     cloud: ospcloud
     name: "{{ item.value.name }}"
     meta:
-    - "{{ item.value.meta }}"
+    - "{{ item.value.meta[1] }}"
     flavor: "{{ item.value.flavor }}"
     key_name: "{{ item.value.key_name }}"
     nics:
