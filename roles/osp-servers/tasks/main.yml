@@ -39,5 +39,4 @@
     port: 22
     search_regex: OpenSSH
     timeout: 30
-  delegate_to: "{{ item.item.value.name }}"
   loop: "{{ floating_ip_info.results }}"
