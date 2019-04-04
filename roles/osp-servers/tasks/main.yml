@@ -7,7 +7,7 @@
     state: "{{ item.value.state }}"
     cloud: ospcloud
     name: "{{ item.value.name }}"
-    meta: "{{ item.value.meta | list }}"
+    meta: "{{ item.value.meta | flatten }}"
     flavor: "{{ item.value.flavor }}"
     key_name: "{{ item.value.key_name }}"
     nics:
